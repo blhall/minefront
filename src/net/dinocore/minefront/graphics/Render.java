@@ -1,10 +1,12 @@
 package net.dinocore.minefront.graphics;
 
+import net.dinocore.minefront.Display;
+
 public class Render {
 	public final int width;
 	public final int height;
 	public final int[] pixels;
-	
+
 	public Render(int width, int height) {
 		this.width = width;
 		this.height = height;
@@ -24,6 +26,7 @@ public class Render {
 				}
 				
 				int alpha = render.pixels[x + y * render.width];
+				
 				if (alpha > 0) {
 					pixels[xPix + yPix * width] = alpha;
 				}
