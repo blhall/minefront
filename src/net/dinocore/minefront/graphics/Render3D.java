@@ -13,6 +13,9 @@ public class Render3D extends Render{
 		for (int y = 0; y < height; y++) {
 			double ceiling = (y - height / 2.0) / height;
 			
+			if (ceiling < 0) {
+				ceiling = -ceiling;
+			}
 			
 			double z = 8 / ceiling;
 			
@@ -20,9 +23,11 @@ public class Render3D extends Render{
 			for (int x = 0; x < width; x++) {
 				double depth = (x - width / 2.0) / height;
 				depth *= z;
-				int xx = (int) (depth) & 15;
-				int yy = (int) (z + time) & 15;
-				pixels[x + y * width] = (xx * 16)  | (yy * 16) << 8;
+				double xx = depth;
+				double yy = z + time;
+				int xPix = (int) (xx);
+				int yPix = (int) (yy);
+				pixels[x + y * width] = ((xPix & 15) * 16)  | ((yPix & 15) * 16) << 8;
 				
 			}
 		}
