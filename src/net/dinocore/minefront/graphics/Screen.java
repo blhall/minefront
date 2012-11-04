@@ -1,4 +1,4 @@
-// episode 10
+// episode 13
 package net.dinocore.minefront.graphics;
 
 import java.util.Random;
@@ -21,19 +21,8 @@ public class Screen extends Render {
 	}
 
 	public void render(Game game) {
-		for (int i = 0; i < width * height; i++ ) {
-			pixels[i] = 0;
-		}
-		
-		for (int i = 0; i < 50; i++ ) {			
-			int anim = (int) (Math.sin((game.time + i) % 1000.0 / 100) * 100);
-			int anim2 = (int) (Math.cos((game.time + i) % 1000.0 / 100) * 100);
-			
-			//draw(test, (width - 256) / 2 + anim, (height - 256) / 2 + anim2);
-		}
-		
 		render.floor(game);
+		render.renderDistanceLimiter();
 		draw(render, 0, 0);
 	}
-
 }
