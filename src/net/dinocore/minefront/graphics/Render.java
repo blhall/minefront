@@ -1,6 +1,6 @@
 package net.dinocore.minefront.graphics;
 
-import net.dinocore.minefront.Display;
+//import net.dinocore.minefront.Display;
 
 public class Render {
 	public final int width;

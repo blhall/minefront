@@ -14,7 +14,7 @@ import java.awt.image.DataBufferInt;
 
 import javax.swing.JFrame;
 
-import net.dinocore.minefront.graphics.Render;
+//import net.dinocore.minefront.graphics.Render;
 import net.dinocore.minefront.graphics.Screen;
 import net.dinocore.minefront.input.Controller;
 import net.dinocore.minefront.input.InputHandler;

@@ -1,4 +1,4 @@
-// episode 14
+// episode 15 - part of way through 16
 package net.dinocore.minefront.graphics;
 
 import java.util.Random;

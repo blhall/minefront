@@ -1,6 +1,7 @@
 package net.dinocore.minefront.graphics;
 
 import net.dinocore.minefront.Game;
+import net.dinocore.minefront.input.Controller;
 
 public class Render3D extends Render{
 	
@@ -14,9 +15,13 @@ public class Render3D extends Render{
 	
 	public void floor(Game game) {
 		double floorPosition = 8;
-		double ceilingPosition = 800;
+		double ceilingPosition = 8;
 		double forward = game.controls.z;
 		double right = game.controls.x;
+		double up = game.controls.y;
+		
+		// Head bob...
+		double walking = Math.sin(game.time / 6.0) * 0.3;
 		
 		double rotation = game.controls.rotation;
 		double cosine = Math.cos(rotation);
@@ -25,10 +30,10 @@ public class Render3D extends Render{
 		for (int y = 0; y < height; y++) {
 			double ceiling = (y - height / 2.0) / height;
 			
-			double z = floorPosition / ceiling;
-						
+			double z = (floorPosition + up) / ceiling;
+												
 			if (ceiling < 0) {
-				z = ceilingPosition / -ceiling;
+				z = (ceilingPosition - up) / -ceiling;
 			}			
 			
 			for (int x = 0; x < width; x++) {
