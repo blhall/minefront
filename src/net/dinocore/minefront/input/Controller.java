@@ -2,7 +2,10 @@ package net.dinocore.minefront.input;
 
 public class Controller {
 	public double x, z, y, rotation, xa, za, ya, rotationa;
-	public void tick(boolean forward, boolean back,boolean left,boolean right,boolean turnLeft,boolean turnRight) {
+	public static boolean turnLeft = false;
+	public static boolean turnRight = false;
+	
+	public void tick(boolean forward, boolean back,boolean left,boolean right) {
 		double rotationSpeed = 0.01;
 		double walkSpeed = 1.0;
 		double xMove = 0.0;
